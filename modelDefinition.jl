@@ -4,11 +4,14 @@ const ℓ = 0.02    # vessel length
 
 # numerical constants
 const N_nodes = 11
+const iterations_limit = 1  # iterations limit
+const results_tollerance = 1e-5
 
 # physical constants
 const E = 5.2e5  # Young's modulus
 const h  = zeros(Float64, N_nodes) + 1.e-3  # h(x) thickness
 const R0 = zeros(Float64, N_nodes) + 1.e-2  # R0(x) diastolic lumen radius
+const P_ext = 2*133.32
 
 # boundary conditions
 #=

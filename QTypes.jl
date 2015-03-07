@@ -1,6 +1,6 @@
 module QTypes
 
-export vesselData, bloodData, heartData, capillariesData
+export vesselData, bloodData, heartData, capillariesData, numericalModel
 
 #=================
  TYPES DEFINITION
@@ -14,8 +14,9 @@ type vesselData
   dx :: Float64   # Δx
 
   # physical constants
-  beta :: Array{Float64, 1}   # β
-  R0   :: Array{Float64, 1}   # unstressed lumen radius
+  beta  :: Array{Float64, 1}   # β
+  R0    :: Array{Float64, 1}   # unstressed lumen radius
+  P_ext :: Float64 # external pressure
 
   # iterative solution
   A :: Array{Float64, 1}   # cross-sectional area
@@ -47,4 +48,18 @@ type capillariesData
   Cd :: Float64
 end
 
+type numericalModel
+  delta_t :: Float64
+  it_lim  :: Int64
+  toll    :: Float64
+end
+
+
+
+
+
+
+
+
+#!!
 end
